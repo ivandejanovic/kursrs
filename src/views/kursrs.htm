@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sr" manifest="manifest.appcache">
+  <head>
+    <title>Kurs Rs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Parking Servis aplikacija">
+    <meta name="keywords" content="Firefox OS, Serbia, Srbija, kurs, kursne liste">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/quine/firefoxOs.css">
+    <link rel="stylesheet" href="../css/app/kursrs.css">
+  </head>
+  <body>
+    <div id="main_container">Loading...</div>
+    <script id="index-template" type="text/x-template">
+      <h2>
+        <p>
+          Kurs Rs
+        </p>
+      </h2>
+      <nav>
+        <ul>
+          <li>
+            <a href="#cur_list/EUR">Kursna lista za: EUR</a>
+          </li>
+          <li>
+            <a href="#cur_list/USD">Kursna lista za: USD</a>
+          </li>
+          <li>
+            <a href="#cur_list/CHF">Kursna lista za: CHF</a>
+          </li>
+          <li>
+            <a id="update">Osvezi podatke</a>
+          </li>
+          <li>
+            <a href="#instructions">Uputstvo</a>
+          </li>
+          <li>
+            <a href="#about">O aplikaciji KursRs</a>
+          </li>
+        </ul>
+      </nav>
+      <p id="message">
+      </p>
+    </script>
+    <script id="currency-template" type="text/x-template">
+      <h2>
+        <img id="backCurrency" src="../images/quine/common-back.png"/>
+        <p>
+          Kursna lista za: <%=cur%>
+        </p>
+      </h2>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Menjacnica
+            </th>
+            <th>
+              Prodajni
+            </th>
+            <th>
+              Kupovni
+            </th>
+            <th>
+              Azurirano
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% _.each(exchanges, function(data) { %>
+            <tr>
+              <td>
+                <%= data.exchange %>
+              </td>
+              <td>
+                <%= data.sellRate %>
+              </td>
+              <td>
+                <%= data.buyRate %>
+              </td>
+              <td>
+                <%= data.date %>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </script>
+    <script id="instructions-template" type="text/x-handlebars-template">
+      <h2>
+        <img id="backCurrency" src="../images/quine/common-back.png"/>
+        <p>
+          Uputstvo za koriscenje
+        </p>
+      </h2>
+      <article>
+        <p>
+          Aplikacija omogucava korisniku da sazna prodajni i kupovni kurs
+          EUR, USD i CHF valute velikog broja menjacnica i banaka u Srbiji.
+          Pritiskom na osvezi podatke najsveziji podaci se preuzimaju sa interneta.
+        </p>
+        <p>
+          Pritiskom na odgovarajucu valutu korisnik moze u tabeli da vidi prodajni
+          i kupovni kurs za menjacnice i banke kao i kada je svaki kurs ponaosob
+          promenjen. Podaci se cuvaju lokalno tako da je internet konekcija potrebna
+          samo pri osvezavanju podataka.
+        </p> 
+      </article>
+    </script>
+    <script id="about-template" type="text/x-handlebars-template">
+      <h2>
+        <img id="backCurrency" src="../images/quine/common-back.png"/>
+        <p>
+          O aplikaciji KursRs
+        </p>
+      </h2>
+      <article>
+        <p>
+          Internet portal <a target="_blank" href="http://kurs.rs">kurs.rs</a> razvio je Vlada Grujic.
+        </p>
+        <p>
+          Portal <a target="_blank" href="http://kurs.rs">kurs.rs</a> vam omogucava
+          da saznate najsvezije prodajne i  kupovne kurseve za veliki broj menjacnica
+          i banaka, da izracunate koliko bi vas kostala kupovina ili prodaja u
+          izabranoj menjacnici ili banci kao i da saznate lokacije ekspozitura za
+          izabranu menjacnicu ili banku.
+        </p>
+        <p>
+          Aplikaciju za FirefoxOs razvio je Ivan Dejanovic
+          (<a target="_blank" href="http://quineinteractive.com">Quine Interactive</a>).
+        </p>
+        <p>
+          Aplikacija KursRs vam omogucava da na svom telefonu imate najsvezije kursne
+          informacije sa portala <a target="_blank" href="http://kurs.rs">kurs.rs</a>.
+        </p>
+        <p>
+          Verzija 1.1.0: Optimizacija. Smanjena velicina aplikacije radi brzeg preuzimanja.
+        </p>
+        <p>
+          Verzija 1.0.0: Prva verzija.
+        </p>
+      </article>
+    </script>
+    <script type="text/javascript" src="../js/libs/json2-min.js"></script>
+    <script type="text/javascript" src="../js/libs/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../js/libs/underscore-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/libs/backbone-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/libs/backbone.localStorage.js"></script>
+    <script type="text/javascript" src="../js/libs/atlas-0.3.0.min.js"></script>
+    <script type="text/javascript" src="../js/app/kursrs/app.js"></script>
+  </body>
+</html>

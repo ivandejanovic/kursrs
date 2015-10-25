@@ -1,0 +1,23 @@
+{
+  "name": "Kurs Rs",
+  "description": "Application KursRs enables you to have the most recent currency exchange rates from portal kurs.rs. Portal www.kurs.rs gives you the most recent buy and sell rates for great number of exchange offices and bank, lets you calculate how much would you get for buying or selling for in a given exchange office or bank as well as their location in Serbia. Portal www.kurs.rs was developed by Vlada Grujic. Application for FirefoxOs was developed by Ivan Dejanovic (www.quineinteractive.com).\n\nAplikacija KursRs vam omogucava da na svom telefonu imate najsvezije kursne informacije sa portala kurs.rs. Portal www.kurs.rs vam omogucava da saznate najsvezije prodajne i kupovne kurseve za veliki broj menjacnica i banaka, da izracunate koliko bi vas kostala kupovina ili prodaja u izabranoj menjacnici ili banci kao i da saznate lokacije ekspozitura za izabranu menjacnicu ili banku u Srbiji. Portal www.kurs.rs razvio je Vlada Grujic. Aplikaciju za FirefoxOs razvio je Ivan Dejanovic (www.quineinteractive.com).",
+  "launch_path": "/views/kursrs.htm",
+  "version": "1.1.0",
+  "icons": {
+    "16": "/images/app/kursrs16.png",
+    "30": "/images/app/kursrs30.png",
+    "32": "/images/app/kursrs32.png",
+    "48": "/images/app/kursrs48.png",
+    "60": "/images/app/kursrs60.png",
+    "64": "/images/app/kursrs64.png",
+    "90": "/images/app/kursrs90.png",
+    "120": "/images/app/kursrs120.png",
+    "128": "/images/app/kursrs128.png",
+    "256": "/images/app/kursrs256.png"
+  },
+  "developer": {
+    "name": "Quine Interactive",
+    "url": "http://quineinteractive.com"
+  },
+  "default_locale": "sr"
+}

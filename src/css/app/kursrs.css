@@ -1,0 +1,33 @@
+#main_container table {
+  margin: 10px auto 0px auto;
+  padding: 10px;
+  font-size: 12px;
+  border-collapse: collapse;
+  empty-cells: show;
+  border: 3px solid #555555;
+  max-width: 90%;
+}
+
+#main_container th {
+  border: 3px solid #555555;
+}
+
+#main_container td {
+  border: 3px solid #555555;
+}
+
+#main_container #message {
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  font-size: 14px;
+  font-family: 'PT Sans', Arial, sans-serif;
+  font-weight: bold;
+  color: #000000;
+}
+
+@media screen and (min-width: 600px) {
+  #main_container table {
+    font-size: 16px;
+  }
+}
