@@ -24,13 +24,6 @@
     "*"
   ],
   "permissions": {
-    "device-storage:pictures": {
-        "access": "readcreate"
-    },
-    "systemXHR":{},
-    "contacts": {
-        "description" : "Reading out contacts",
-        "access": "readcreate"
-    }
+    "systemXHR":{}
   }
 }
