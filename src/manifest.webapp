@@ -19,5 +19,18 @@
     "name": "Quine Interactive",
     "url": "http://quineinteractive.com"
   },
-  "default_locale": "sr"
+  "default_locale": "sr",
+  "installs_allowed_from": [
+    "*"
+  ],
+  "permissions": {
+    "device-storage:pictures": {
+        "access": "readcreate"
+    },
+    "systemXHR":{},
+    "contacts": {
+        "description" : "Reading out contacts",
+        "access": "readcreate"
+    }
+  }
 }

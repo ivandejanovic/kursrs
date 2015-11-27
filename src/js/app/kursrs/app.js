@@ -81,25 +81,31 @@
       this.clearCollection(collection);
       this.fillCollectionFromArray(collection, array);
     },
-    updateDataSuccess : function(data, textStatus, jqXHR) {
+    updateDataSuccess : function(data) {
       this.refillCollectionFromArray(app.eurExchanges, data.eur);
       this.refillCollectionFromArray(app.usdExchanges, data.usd);
       this.refillCollectionFromArray(app.chfExchanges, data.chf);
 
       $('#message').html('Podaci uspesno osvezeni.');
     },
-    updateDataFail : function(data, textStatus, jqXHR) {
+    updateDataFail : function() {
       $('#message').html('Greska pri osvezavanju podataka. Pokusajte ponovo.');
     },
     handleUpdateClick : function() {
       var that = this;
+      
+       var xhr = new XMLHttpRequest({mozSystem: true});
+       xhr.open('GET', 'http://quineinteractive.com/rest/kursrs/getData', true);
+       xhr.onreadystatechange = function () {
+         if (xhr.status === 200 && xhr.readyState === 4) {
+           that.updateDataSuccess(JSON.parse(xhr.response));
+         }
+       };
 
-      $.get('http://quineinteractive.com/rest/kursrs/getData')
-      .done(function(data, textStatus, jqXHR) {
-        that.updateDataSuccess(data, textStatus, jqXHR);
-      }).fail(function(data, textStatus, jqXHR) {
-        that.updateDataFail(data, textStatus, jqXHR);
-      });
+       xhr.onerror = function () {
+         that.updateDataFail();
+       };
+       xhr.send();
     }
   });
 
