@@ -1,0 +1,30 @@
+<h2>
+  <p>
+    Kurs Rs
+  </p>
+</h2>
+<nav>
+  <ul>
+    <li>
+      <a href="#/currency/EUR">Kursna lista za: EUR</a>
+    </li>
+    <li>
+      <a href="#/currency/USD">Kursna lista za: USD</a>
+    </li>
+    <li>
+      <a href="#/currency/CHF">Kursna lista za: CHF</a>
+    </li>
+    <li>
+      <a ng-click="vm.fetchRates()">Osvezi podatke</a>
+    </li>
+    <li>
+      <a href="#/instructions">Uputstvo</a>
+    </li>
+    <li>
+      <a href="#/about">O aplikaciji KursRs</a>
+    </li>
+  </ul>
+</nav>
+<p id="message">
+  {{vm.message}}
+</p>

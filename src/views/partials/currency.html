@@ -1,0 +1,40 @@
+<h2>
+  <img src="../images/quine/common-back.png" ng-click="vm.handleBack()"/>
+  <p>
+    Kursna lista za: {{vm.cur}}
+  </p>
+</h2>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Menjacnica
+      </th>
+      <th>
+        Prodajni
+      </th>
+      <th>
+        Kupovni
+      </th>
+      <th>
+        Azurirano
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="rate in vm.rates">
+      <td>
+        {{rate.exchange}}
+      </td>
+      <td>
+        {{rate.sellRate}}
+      </td>
+      <td>
+        {{rate.buyRate}}
+      </td>
+      <td>
+        {{rate.date}}
+      </td>
+    </tr>
+  </tbody>
+</table>
