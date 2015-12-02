@@ -1,13 +1,21 @@
 (function (root, angular) {
   'use strict';
 
-  var injectParams = [];
+  var injectParams = ['localStorageService'];
 
-  var RatesFactory = function() {
+  var RatesFactory = function(localStorageService) {
     var factory = {}
       , rates = {eur: [],
                  usd: [],
-                 chf: []};
+                 chf: []}
+      , key = 'kursrs';
+
+    //localStorageService.setPrefix(key);
+
+    var storedRates = localStorageService.get(key);
+    if (storedRates !== null) {
+      rates = storedRates;
+    }
     
     factory.getRates = function(cur) {
       if (cur === 'EUR') {
@@ -21,7 +29,7 @@
 
     factory.updateRates = function(newRates) {
       rates = newRates;
-      return true;
+      return localStorageService.set(key, newRates);
     };
     
     return factory;
