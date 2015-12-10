@@ -28,4 +28,4 @@
     .otherwise({ redirectTo: '/' });
 
   }]);
-}(window, window.angular));
+}(this, this.angular));

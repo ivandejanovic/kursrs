@@ -10,8 +10,6 @@
                  chf: []}
       , key = 'kursrs';
 
-    //localStorageService.setPrefix(key);
-
     var storedRates = localStorageService.get(key);
     if (storedRates !== null) {
       rates = storedRates;
